@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostCSS</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body class="bg-blue-600 flex justify-center items-center h-screen">
+    <div x-data="{ radio: 1 , activeClass :  'ring-4 ring-blue-300 bg-blue-400 text-white' }" class="flex flex-col gap-y-4 max-w-md w-full">
+      <div @click="radio = 1" :class="radio ===1 ? activeClass: ''" class="bg-white cursor-pointer rounded-xl p-4 flex items-center justify-between">
+        <div class="flex flex-col gap-y-2">
+          <span>Startup</span>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div x-show="radio===1" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+      <div @click="radio = 2" :class="radio === 2 ? activeClass : ''" class="bg-white cursor-pointer rounded-xl p-4 flex items-center justify-between">
+        <div class="flex flex-col">
+          <span>Startup</span>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div x-show="radio===2" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+      <div @click="radio = 3" :class="radio === 3 ? activeClass : ''" class="bg-white cursor-pointer rounded-xl p-4 flex items-center justify-between">
+        <div class="flex flex-col">
+          <span>Startup</span>
+          <span>12GB/6 CPUs · 160 GB SSD disk</span>
+        </div>
+        <div x-show="radio===3" class="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
