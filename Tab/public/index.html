@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostCSS</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body class="bg-blue-700 flex justify-center items-center h-screen">
+    <div x-data="{tabNO : 1, activeClass : 'text-blue-600 bg-white'}" class="max-w-md flex flex-col gap-y-2 w-full">
+      <!-- Tab header -->
+      <div class="bg-blue-400 p-1 rounded-xl flex gap-x-2 justify-between items-center text-white">
+        <button @click="tabNO = 1" :class="tabNO ===1 ? activeClass : '' " class="font-bold w-full p-2 hover:bg-blue-300 rounded-xl flex justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50">Recent</button>
+        <button @click="tabNO = 2" :class="tabNO ===2 ? activeClass : '' " class="font-bold w-full p-2 hover:bg-blue-300 rounded-xl flex justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50">Popular</button>
+        <button @click="tabNO = 3" :class="tabNO ===3 ? activeClass : '' " class="font-bold w-full p-2 hover:bg-blue-300 rounded-xl flex justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 focus:ring-white focus:ring-offset-blue-400 focus:ring-opacity-50">Trending</button>
+      </div>
+      <!-- Tab content -->
+      <div class="bg-white p-2 rounded-xl">
+        <!-- content -1 -->
+        <div x-show-="tabNO ===1 ">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Does drinking coffee make you master</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Does drinking coffee make you master</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+        </div>
+        <!-- content -2 -->
+        <div x-show-="tabNO ===2 ">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Is tech making coffee better or worse ?</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Is tech making coffee better or worse ?</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+        </div>
+        <!-- content -3 -->
+        <div x-show-="tabNO ===3 ">
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Ask me Anything : 10 answers to your questuions about coffee</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+          <div class="hover:bg-gray-100 px-2 py-4 rounded-xl">
+            <p class="mb-2 font-bold text-sm">Ask me Anything : 10 answers to your questuions about coffee</p>
+            <div class="text-gray-400 text-xs">5h ago &bull; 5comments &bull; 2 shares</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
